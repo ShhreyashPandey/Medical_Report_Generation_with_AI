@@ -63,8 +63,8 @@ class DenseNetClassifier(nn.Module):
 
 # Define the model architecture (same as used during training)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = DenseNetClassifier().to(device)  # Example: DenseNet121, replace if you used another model
-model.load_state_dict(torch.load(r'C:\Users\shreya\PycharmProjects\DL Project\densenet_model.pth',weights_only=True))
+model = DenseNetClassifier().to(device) 
+model.load_state_dict(torch.load('densenet_model.pth',weights_only=True))
 model.eval()  # Set the model to evaluation mode
 
 # Define the transformation pipeline for the image (match your training transformation)
